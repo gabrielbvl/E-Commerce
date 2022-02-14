@@ -1,0 +1,517 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #F5F5F5;
+}
+#nav{
+    margin: auto;
+}
+#btn-mobile{
+    display: flex;
+    padding: .5rem 1rem;
+    font-size: 1rem;
+    border: none;
+    background: none;
+    cursor: pointer;
+    gap: .5rem;
+}
+#nav #btn-mobile button{
+    display: none;
+}
+#menuHamburguer{
+    display: block;
+    width: 20px;
+    border-top: 2px solid;
+}
+#menuHamburguer::after, #menuHamburguer::before{
+    content: "";
+    display: block;
+    width: 20px;
+    height: 2px;
+    margin-top: 5px;
+    background: currentColor;
+    transition: 0.5s;
+    position: relative;
+}
+.menuDeNavegacao{
+    display: none;
+    display: block;
+    position: absolute;
+    width: 100%;
+    margin-top: 30px;
+    right: 0px;
+    background-color: #F5F5F5;
+    height: 0px;
+    transition-duration: 1s;
+    z-index: 1000;
+    line-height: 3;
+    font-size: 25px;
+    visibility: hidden;
+    overflow-y: hidden;
+}
+#nav.active .menuDeNavegacao{
+    height: calc(100vh - 30px);
+    visibility: visible;
+    overflow-y: auto;
+}
+#nav.active #menuHamburguer{
+    border-top-color: transparent;
+}
+#nav.active #menuHamburguer::before{
+    transform: rotate(135deg);
+}
+#nav.active #menuHamburguer::after{
+    transform: rotate(-135deg);
+    margin-top: -2px;
+}
+.menuDeNavegacao a{
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px solid #cfc6c6;
+}
+header > .logo{
+    width: 100px;
+    margin: auto;
+}
+header > .icones{
+    min-width: 70px;
+}
+header > .icones img:nth-child(1){
+    width: 25px;
+}
+header > .icones img:nth-child(2){
+    width: 40px;
+}
+header > h1{
+    font-family: 'Inter', sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    width: 212px;
+}
+header > ul{
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+header a{
+    cursor: pointer;
+}
+.produtos{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.produtos .produtosIndividuais{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: left;
+    margin: 10px;
+    width: 296px;
+    border: 2px solid white;
+}
+.produtos .produtosIndividuais:hover{
+    border: 2px solid #6B54DE;
+}
+.imgProduto{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 296px;
+    height: 154px;
+    background-color: #F5F5F5;
+}
+.produtos img{
+    width: 40%;
+}
+.infoProdutos{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 2px solid #F5F5F5;
+    height: 215px;
+    gap: 1rem;
+    padding: 0px 15px;
+    font-family: 'Inter', sans-serif;
+}
+.categoria{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 72px;
+    height: 26px;
+    background-color: #2E245E;
+    color: white;
+    font-size: 12px;
+}
+.infoProdutos h3{
+    color: #333333;
+    font-size: 18px;
+    font-weight: 700;
+}
+.descricao{
+    color: #828282;
+    font-size: 12px;
+    font-weight: 400;
+}
+.valor{
+    color: #2E245E;
+    font-size: 12px;
+    font-weight: 600;
+}
+.infoProdutos a{
+    color: #828282;
+    font-size: 14px;
+}
+.infoProdutos a:hover{
+    color: #6B54DE;
+    font-weight: 900;
+}
+ul li button{
+    width: 150px;
+    height: 20px;
+    border: none;
+    background-color: white;
+    color: #828282;
+    font-weight: 700;
+    margin-left: -5px;
+}
+.infoProdutosCar button{
+    background-color: #F5F5F5;
+    font-size: 12px;
+    font-weight: 400;
+    margin-left: -5px;
+}
+ul li button:hover{
+    color: #6B54DE;
+}
+.menuDeNavegacaoDesktop{
+    display: none;
+}
+
+
+
+.pesquisaCarrinho{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    font-family: 'Inter', sans-serif;
+}
+.textBox{
+    width: 56vw;
+    height: 50px;
+    background: #F5F5F5;
+    border: 1px solid #F5F5F5;
+    box-sizing: border-box;
+    padding: 10px;
+    font-family: 'Inter', sans-serif;
+}
+.butPes{
+    width: 36vw;
+    height: 50px;
+    background-color: #6B54DE;
+    color: white;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    border: transparent;
+}
+.carrinhoTitulo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 18px;
+    font-weight: 700;
+    width: 92vw;
+    height: 50px;
+    background: #6B54DE;
+    margin-top: 20px;
+}
+.carrinhoItens{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 92vw;
+    height: 180px;
+    overflow-x: scroll;
+    background: #F5F5F5;
+    gap: 1rem;
+}
+.carrinhoItens img{
+    margin-bottom: 5px;
+}
+.carrinhoItens .um{
+    font-size: 22px;
+    font-weight: 700;
+    color: #333333;
+    margin-bottom: 10px;
+}
+.carrinhoItens .dois{
+    font-size: 14px;
+    font-weight: 400;
+    color: #828282;
+}
+.carrinhoVazio{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.produtosCarrinho{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.infoProdutosCar{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    line-height: 24px;
+}
+
+.infoProdutosCar h3{
+    color: #333333;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.valor{
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.produtosCarrinho img{
+    width: 80px;
+}
+
+.qtdValor{
+    display: flex;
+    flex-direction: column;
+    width: 92vw;
+    height: 126px;
+    background-color: #333333;
+    color: #FFFFFF;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.quantidade{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 20px;
+}
+.quantidade p:nth-child(2){
+    color: #828282;
+}
+
+.total{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 20px;
+}
+.total p:nth-child(2){
+    color: #828282;
+}
+
+@media screen and (min-width: 768px) {
+
+    
+    .pesquisaMobile{
+        display: none;
+    }
+    .pesquisaCarrinho{
+        float: right;
+        padding: 10px;
+        display: initial;
+        margin-right: 4.3%;
+        font-family: 'Inter', sans-serif;
+    }
+    .textBox{
+        width: 246px;
+        height: 50px;
+        background: #F5F5F5;
+        border: 1px solid #F5F5F5;
+        box-sizing: border-box;
+        padding: 10px;
+        font-family: 'Inter', sans-serif;
+    }
+    .butPes{
+        width: 96px;
+        height: 50px;
+        background-color: #6B54DE;
+        color: white;
+        font-family: 'Inter', sans-serif;
+        font-size: 16px;
+        font-weight: 500;
+        border: transparent;
+    }
+    .carrinhoTitulo{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 18px;
+        font-weight: 700;
+        width: 347px;
+        height: 50px;
+        background: #6B54DE;
+        margin-top: 20px;
+    }
+    .carrinhoItens{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 347px;
+        height: 344px;
+        overflow-y: scroll;
+        background: #F5F5F5;
+        display: inline-block;
+    }
+    .carrinhoItens li{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+    .carrinhoItens .um{
+        font-size: 22px;
+        font-weight: 700;
+        color: #333333;
+        margin-bottom: 10px;
+    }
+    .carrinhoItens .dois{
+        font-size: 14px;
+        font-weight: 400;
+        color: #828282;
+    }
+    .carrinhoVazio{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .produtosCarrinho{
+        display: flex;
+        margin-top: 15px;
+    }
+
+    .infoProdutosCar{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        margin-left: 30px;
+        width: 200px;
+        line-height: 24px;
+    }
+
+    .infoProdutosCar button{
+        text-align: left;
+    }
+
+    .infoProdutosCar h3{
+        color: #333333;
+        font-size: 18px;
+        font-weight: 700;
+    }
+
+    .valor{
+        font-size: 12px;
+        font-weight: 600;
+    }
+    
+    .produtosCarrinho img{
+        width: 80px;
+    }
+
+    .qtdValor{
+        display: flex;
+        flex-direction: column;
+        width: 347px;
+        height: 126px;
+        background-color: #333333;
+        color: #FFFFFF;
+        font-size: 16px;
+        font-weight: 500;
+    }
+
+    .quantidade{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 20px;
+    }
+    .quantidade p:nth-child(2){
+        color: #828282;
+    }
+
+    .total{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 20px;
+    }
+    .total p:nth-child(2){
+        color: #828282;
+    }
+
+}
+
+@media screen and (min-width: 1024px) {
+    header{
+        display: flex;
+        justify-content: space-between;
+    }
+    header > .logo{
+        margin: 0px;
+        margin-left: 5%;
+    }
+    #nav{
+        display: none;
+    }
+    #btn-mobile{
+        display: initial;
+    }
+    .menuDeNavegacaoDesktop{
+        display: initial;
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+        margin-right: 5%;
+    }
+    .menuDeNavegacaoDesktop a{
+        text-decoration: none;
+        color: #828282;
+        font-size: 16px;
+    }
+    .menuDeNavegacaoDesktop a:hover{
+        color: #6B54DE;
+    }
+    .todosDesktop{
+        color: #333333;
+        font-weight: 700;
+    }
+    .menuDeNavegacaoDesktop li:nth-child(1) a:hover{
+        color: #2E245E;
+    }
+    header > .icones img:nth-child(1){
+        display: none;
+    }
+    header > .icones img:nth-child(2){
+        display: none;
+    }
+}
